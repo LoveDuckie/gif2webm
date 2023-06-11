@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "gif2webm"
+version = "0.1.0"
+description = "A tool for batch converting GIF files into WebM."
+authors = ["Luc Shelton <lucshelton@gmail.com>"]
+readme = "README.md"
+packages = [
+    { include = "gif2webm" },
+    { include = "gif2webm/**/*.py" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.1.3"
+rich-click = "^1.6.1"
+click-option-group = "^0.5.6"
+six = "^1.16.0"
+jinja2 = "^3.1.2"
+rich = "^13.4.1"
+moviepy = "^1.0.3"
+ffmpeg-python = "^0.2.0"
+
+[tool.poetry.group.tests.dependencies]
+unittest-xml-reporting = "^3.2.0"
+coverage = "^7.2.7"
+
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^6.0.1"
+sphinx-rtd-theme = "^1.2.2"
+
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.2"
+
+[tool.poetry.scripts]
+gif2webm = 'gif2webm.__main__:cli'
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
